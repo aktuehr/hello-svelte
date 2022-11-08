@@ -3,12 +3,15 @@
 
   let name = "hoppe";
   let src = "/tutorial/image.gif";
+  let string = `this string contains some <strong>HTML!!!</strong>`;
 </script>
 
 <h1>Hello {name.toUpperCase()}!</h1>
 <img {src} alt="{name} dances." />
 <p>This is a paragraph.</p>
 <Nested />
+<p>{string}</p>
+<p>{@html string}</p>
 
 <style>
   p {
