@@ -13,6 +13,16 @@
 
   $: doubled = count * 2;
   let hoppe = count * 2;
+
+  $: console.log("the count is " + count);
+  $: {
+    console.log("the count is " + count);
+    alert("I SAID THE COUNT IS " + count);
+  }
+  $: if (count >= 10) {
+    alert("count is dangerously high!");
+    count = 9;
+  }
 </script>
 
 <h1>Hello {name.toUpperCase()}!</h1>
