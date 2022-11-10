@@ -10,6 +10,9 @@
   function incrementCount() {
     count += 1;
   }
+
+  $: doubled = count * 2;
+  let hoppe = count * 2;
 </script>
 
 <h1>Hello {name.toUpperCase()}!</h1>
@@ -22,6 +25,7 @@
   Clicked {count}
   {count === 1 ? "time" : "times"}
 </button>
+<p>{count} doubled is {doubled} or {hoppe} ?</p>
 
 <style>
   p {
