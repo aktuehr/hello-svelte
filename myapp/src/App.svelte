@@ -1,4 +1,5 @@
 <script>
+  import Info from "./info.svelte";
   import Nested from "./Nested.svelte";
 
   let name = "hoppe";
@@ -23,6 +24,13 @@
     alert("count is dangerously high!");
     count = 9;
   }
+
+  const pkg = {
+    name: "svelte",
+    version: 3,
+    speed: "blazing",
+    website: "https://svelte.dev",
+  };
 </script>
 
 <h1>Hello {name.toUpperCase()}!</h1>
@@ -37,6 +45,7 @@
   {count === 1 ? "time" : "times"}
 </button>
 <p>{count} doubled is {doubled} or {hoppe} ?</p>
+<Info {...pkg} />
 
 <style>
   p {
