@@ -31,6 +31,12 @@
     speed: "blazing",
     website: "https://svelte.dev",
   };
+
+  let user = { loggedIn: false };
+
+  function toggle() {
+    user.loggedIn = !user.loggedIn;
+  }
 </script>
 
 <h1>Hello {name.toUpperCase()}!</h1>
@@ -46,6 +52,14 @@
 </button>
 <p>{count} doubled is {doubled} or {hoppe} ?</p>
 <Info {...pkg} />
+
+{#if user.loggedIn}
+  <button on:click={toggle}>Log out</button>
+{/if}
+
+{#if !user.loggedIn}
+  <button on:click={toggle}>Log in</button>
+{/if}
 
 <style>
   p {
